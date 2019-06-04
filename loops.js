@@ -38,7 +38,7 @@ function average(arr) {
 //create a function that takes in a function and number
 function repeat(fn, n) {
   for(let i=0; i < n; i++) {
-    fn;
+    fn();
   }
 }
 
@@ -50,7 +50,7 @@ function goodbye(){
   console.log('Goodbye world');
 }
 
-repeat(hello(), 5);
-repeat(goodbye(), 5);
+repeat(hello, 5);
+repeat(goodbye, 5);
 
 hello();
