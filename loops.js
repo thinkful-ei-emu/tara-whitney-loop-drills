@@ -101,3 +101,22 @@ const mudSlide = hazardWarningCreator('Giant Mud Slide');
 
 rocksWarning('Main St and Pacific Ave');
 rocksWarning('Centinela Ave and Olympic Blvd');
+
+//takes an array of movements by a turtle, returns new array with total steps taken each instance//
+function turtleSteps(arr) {
+
+  const filteredArray = arr.filter(instance => instance[0] >= 0 && instance[1] >= 0)
+
+  const stepsArray = filteredArray.map(element => element[0] + element[1]);
+
+  stepsArray.forEach(function(element, index) {
+    if (element === 1) {
+      console.log(`Movement ${index+1}: ${element} step`)
+    }
+    else {
+      console.log(`Movement ${index+1}: ${element} steps`)
+    }  
+  })
+}
+
+turtleSteps([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
