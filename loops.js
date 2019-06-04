@@ -14,10 +14,6 @@ function max(array) {
   return maxNum;
 }
 
-console.log(max([2,9,5,6]));
-
-
-
 // Min: Take an array of numbers, return the smallest number in the array
 function min(array) {
   let i = 0;
@@ -32,4 +28,9 @@ function min(array) {
   return minNum;
 }
 
-console.log(min([2,9,5,6]));
+//computes the average given an array of numbers
+function average(arr) {
+  let sum = 0;
+  arr.forEach(i => sum += i);
+  return sum / arr.length;
+}
