@@ -57,7 +57,7 @@ hello();
 
 //filters an array based on the conditions in fn
 function filter(arr, fn) {
-  newArray = [];
+  let newArray = [];
   arr.forEach(function(element) {
     if (fn(element)) {
       newArray.push(element);
@@ -78,5 +78,26 @@ const filteredNames = filter(myNames, function(name) {
   return name[0] === 'R';
 });
 
-console.log(filteredNames) // => ['Rich', 'Ray']
+console.log(filteredNames); // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
+
+//Hazard alert that tells you the location of the hazard and how many times that alert has been issued
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
+  return function(location){
+    warningCounter++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    if(warningCounter === 1) {
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today!`);
+    } else {
+      console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today!`);
+    }
+  };
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const flashFloodWarning = hazardWarningCreator('Flash Flood');
+const mudSlide = hazardWarningCreator('Giant Mud Slide');
+
+rocksWarning('Main St and Pacific Ave');
+rocksWarning('Centinela Ave and Olympic Blvd');
