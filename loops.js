@@ -14,8 +14,23 @@ function max(array) {
   return maxNum;
 }
 
-max([2,9,5,6]);
-
-
-
 // Min: Take an array of numbers, return the smallest number in the array
+function min(array) {
+  let i = 0;
+  let minNum = array[0];
+
+  while (i < array.length) {
+    if(array[i] < minNum) {
+      minNum = array[i];
+    }
+    i++
+  }
+  return minNum;
+}
+
+//computes the average given an array of numbers
+function average(arr) {
+  let sum = 0;
+  arr.forEach(i => sum += i);
+  return sum / arr.length;
+}
