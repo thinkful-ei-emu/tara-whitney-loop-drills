@@ -23,7 +23,7 @@ function min(array) {
     if(array[i] < minNum) {
       minNum = array[i];
     }
-    i++
+    i++;
   }
   return minNum;
 }
@@ -34,3 +34,23 @@ function average(arr) {
   arr.forEach(i => sum += i);
   return sum / arr.length;
 }
+
+//create a function that takes in a function and number
+function repeat(fn, n) {
+  for(let i=0; i < n; i++) {
+    fn;
+  }
+}
+
+function hello() {
+  console.log('Hello world');
+}
+
+function goodbye(){
+  console.log('Goodbye world');
+}
+
+repeat(hello(), 5);
+repeat(goodbye(), 5);
+
+hello();
