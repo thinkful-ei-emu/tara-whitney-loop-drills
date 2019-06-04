@@ -9,11 +9,12 @@ function max(array) {
     if(array[i] > maxNum) {
       maxNum = array[i];
     }
+    i++;
   }
   return maxNum;
 }
 
-console.log(max([2,9,5,6]));
+max([2,9,5,6]);
 
 
 
