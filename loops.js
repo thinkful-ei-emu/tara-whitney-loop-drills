@@ -120,3 +120,28 @@ function turtleSteps(arr) {
 }
 
 turtleSteps([[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]]);
+
+// Reduce
+
+// iterate through an array of words, make a string
+// critera: length = 3 -> add a space character, + add to acumulator
+// critera: otherwise, captialize the LAST character, + add to acumulator
+
+function decode(string) {
+  
+  const newArray = string.split(' ');
+  
+  const newSentence = newArray.reduce(
+    function(accumulator, word) {
+      if(word.length === 3) {
+        accumulator += ' ';
+      } else {
+        accumulator += word[word.length - 1].toUpperCase();
+      }
+      return accumulator;
+    }, ''
+  );
+  return newSentence;
+}
+
+decode('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest');
